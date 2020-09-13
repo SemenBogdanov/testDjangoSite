@@ -1,7 +1,8 @@
-from django.views.generic import TemplateView
-from .models import Category
+from django.views import generic
+from .models import Category, ToDoList
 
 
-class IndexPageView(TemplateView):
+class IndexPageView(generic.ListView):
+    model = ToDoList
     template_name = 'index.html'
-
+    queryset = ToDoList.objects.all()
