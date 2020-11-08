@@ -19,7 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5-pxar#f(9pp-3schcg(8xclt1w5he_4n)x6_8jrnbn7o-&7j_'
+file = os.path.join(BASE_DIR, 'newDjSite\key.txt')
+with open(file, 'r') as f:
+    SECRET_KEY = f.readline().strip()
+
+
+#SECRET_KEY = '5-pxar#f(9pp-3schcg(8xclt1w5he_4n)x6_8jrnbn7o-&7j_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,7 +58,7 @@ ROOT_URLCONF = 'newDjSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates\\app1')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

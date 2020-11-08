@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% csrf_token %}
+    <table border="1" style="border-collapse: collapse">
+        <tr>{% for c in object_list %}
+            <td>
+                {{ c.title }}</td>
+                {{ c.content }}
+                {{ c.due_date }}
+                {{ c.category }}
+
+        </tr>{% endfor %}
+    </table>
+
+{% endblock %}
